@@ -1,5 +1,5 @@
 import express from 'express';
-import { create, list, get, put, remove } from '../controller/postController.js';
+import { create, list, get, put, remove } from '../controller/postDBController.js';
 
 let router = express.Router();
 // import verifyJWT from '../middleware/verifyJWT.js';

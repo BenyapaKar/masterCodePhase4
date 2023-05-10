@@ -4,22 +4,11 @@ import {
 	useSearchParams,
 	useSubmit,
 	redirect,
+	Form
 } from 'react-router-dom'
 
 
 const PostPage = () => {
-	const [searchParams, setSearchParams] = useSearchParams()
-	const q = searchParams.get('q')
-	console.log(q)
-	const submit = useSubmit()
-
-	const resetSearch = (e) => {
-		const param = searchParams.get('q')
-		if (param) {
-			searchParams.delete('q')
-			setSearchParams(searchParams)
-		}
-	}
 
 	const products = useLoaderData()
 	const list = products.map((e) => (
@@ -39,13 +28,13 @@ const PostPage = () => {
 
 	return (
 		<>
-		
 			<hr />
 			{products.length ? (
 				<ul className="list-item">{list}</ul>
 			) : (
 				'No product available'
 			)}
+			
 		</>
 	)
 }

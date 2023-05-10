@@ -24,6 +24,7 @@ const LoginPage = () => {
                 setPassword("");
                 console.log(data); 
                 localStorage.setItem("firstName", data.firstName);
+                localStorage.setItem("lastName", data.lastName);
                 console.log("name",data.firstName); 
                 navigate('/');
                 window.location.reload();

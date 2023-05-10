@@ -1,8 +1,8 @@
 import express from 'express';
 
-import { create } from '../controller/userController.js';
+import { create } from '../controller/userDBController.js';
 import { handleLogin, handleLogout, handleRefreshToken} from
-    '../controller/authController.js';
+    '../controller/authDBController.js';
 
 let router = express.Router();
 router.post('/', handleLogin);

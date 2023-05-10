@@ -425,7 +425,7 @@ footer {
 .Infobutton button{
     padding: 0.5rem 1rem;
     height: auto;
-    background-color: rgb(246, 204, 90);
+    background-color: rgb(255, 80, 41);
     color: black;
     border: none;
     border-radius: 10px;
@@ -434,6 +434,55 @@ footer {
     font-weight: bold;
     text-align: center;
 }
+
+.managebutton button{
+    padding: 0.5rem 1rem;
+    height: auto;
+    background-color: rgb(147, 180, 96);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.addbutton button{
+    padding: 0.5rem 1rem;
+    height: auto;
+    background-color: rgb(124, 179, 14);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.deletebutton button{
+    padding: 0.5rem 1rem;
+    height: auto;
+    background-color: rgb(194, 36, 8);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.editbutton button{
+    padding: 0.5rem 1rem;
+    height: auto;
+    background-color: rgb(247, 203, 43);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
 /* post detail */
 .img-detail{
     display: block;

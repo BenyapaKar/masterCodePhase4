@@ -14,6 +14,12 @@ cd server
 npm install
 npm start
 ```
+## How to add data to database
+```
+cd server
+cd model
+node --experimental-modules .\TestProducts.js
+```
 
 ## How to keep update this project
 ```

@@ -2,15 +2,17 @@ import express from 'express';
 import logger from 'morgan';
 import * as dotenv from 'dotenv'
 import * as url from 'url';
+import mongooseDbConnect from './config/dbConnect.js'
 // authorization
 import verifyJWT from './middleware/verifyJWT.js';
 // routers
-import productRouter from './router/productRouter.js';
+import postRouter from './router/postRouter.js';
 import userRouter from './router/userRoute.js';
 import authRouter from './router/authRoute.js';
 const app = express();
 dotenv.config()
 const PORT = process.env.PORT || 4000;
+mongooseDbConnect();
 // custom middleware logger
 app.use(logger('short'));
 // built-in middleware to handle urlencoded form data
@@ -26,8 +28,8 @@ app.use('/auth', authRouter); // register, login, logout, refreshToken
 app.get('/secret', verifyJWT,
 	(req, res) => res.json({ success: true, message: 'Secret Page' })
 );
-// REST for products or user
-app.use('/products', productRouter);
+// REST for posts or user
+app.use('/products', postRouter);
 app.use('/api/user', verifyJWT, userRouter);
 app.get('/', (req, res) => { res.status(401).send({ error: 'Invalid Endport' }); });
 app.get('*', (req, res) => {

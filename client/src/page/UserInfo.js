@@ -1,7 +1,8 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 const UserInfo = () => {
     const firstName = localStorage.getItem("firstName");
+    const lastName = localStorage.getItem("lastName");
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,10 +25,17 @@ const UserInfo = () => {
             throw new Error("Error. Try again later!");
         }
     };
+
+
     return (
         <div class="Info1">
         <div class="InfoText">
-          <h1 class="InfoHeading">สวัสดี, {firstName}</h1>
+          <h1 class="InfoHeading">สวัสดี, {firstName}  {lastName}</h1>
+          <div class="managebutton">
+          <Link to="/managePost">
+            <button>จัดการบทความ</button>
+          </Link>
+          </div>
           <div class="Infobutton">
             <button type="submit" onClick={handleSubmit}>ออกจากระบบ</button>&nbsp;
           </div>

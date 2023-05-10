@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import logo from "./style/logo.png"
 const MainLayout = () => {
   const firstName = localStorage.getItem("firstName");
+  const lastName = localStorage.getItem("lastName");
   return (
     
     <div className="container">
@@ -13,6 +14,7 @@ const MainLayout = () => {
         <NavLink to="/post">บทความ</NavLink>&nbsp;
     
         {firstName ? (
+          
           <div className="dropdown" >
             <NavLink  to="/userInfo">สวัสดี, {firstName}</NavLink>&nbsp;
           </div>
@@ -35,5 +37,7 @@ const MainLayout = () => {
        
   );
 };
+
+
 
 export default MainLayout;
