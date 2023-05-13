@@ -12,6 +12,7 @@ const MainLayout = () => {
         </div>
         <div class="links">
         <NavLink to="/post">บทความ</NavLink>&nbsp;
+        <NavLink to="/course">หลักสูตร</NavLink>&nbsp;
     
         {firstName ? (
           

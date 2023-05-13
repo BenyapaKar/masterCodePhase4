@@ -9,9 +9,12 @@ import {
   import MainLayout from './layout/MainLayout'
   import PostLayout from './layout/PostLayout'
   import PostManageLayout from './layout/PostManageLayout'
+  import CourseLayout from './layout/CourseLayout'
   
   import Home from './page/HomePage'
   import Signup from './page/SignupPage'
+  import CoursePage, { action1, productsLoader1 } from './page/CoursePage'
+  import CourseDetailPage, { loader1 as detailLoader1 } from './page/CourseDetailPage'
   import PostPage, { action, productsLoader } from './page/PostPage'
   import PostDetailPage, { loader as detailLoader } from './page/PostDetailPage'
   import ErrorPage from './component/ErrorPage'
@@ -36,8 +39,20 @@ import {
 			  action={action}
 			/>
 			<Route path=":id" element={<PostDetailPage />} loader={detailLoader} />
+      	</Route>
+      
+      	<Route path="course" element={<CourseLayout />}>
+			<Route
+			  index
+			  element={<CoursePage />}
+			  loader={productsLoader1}
+			  errorElement={<ErrorPage />}
+			  action={action1}
+			/>
+			<Route path=":id" element={<CourseDetailPage />} loader={detailLoader1} />
+      	</Route>
 
-		  </Route>
+		  
 		  <Route path="signup" element={<Signup />} />
 		  <Route path="login" element={<LoginPage />} />
 		  <Route path="userInfo" element={<UserInfo />} />

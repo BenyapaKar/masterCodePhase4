@@ -489,3 +489,26 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* course detail */
+.container2{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10rem;
+}
+
+.fixed-btn{
+    background-color: rgb(246, 204, 90);
+    color: black;
+    border-radius: 10px;
+    padding: 15px 30px;
+    position: fixed;
+    /* width: 7rem;
+    height: 2rem;
+    line-height: 2rem; */
+    bottom: 8%;
+    right: 5%;
+    text-align: center;
+    /* margin: 0 10rem; */
+    font-weight: bold;
+}

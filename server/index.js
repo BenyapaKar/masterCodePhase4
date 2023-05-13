@@ -9,6 +9,7 @@ import verifyJWT from './middleware/verifyJWT.js';
 import postRouter from './router/postRouter.js';
 import userRouter from './router/userRoute.js';
 import authRouter from './router/authRoute.js';
+import courseRouter from './router/courseRouter.js';
 const app = express();
 dotenv.config()
 const PORT = process.env.PORT || 4000;
@@ -30,6 +31,7 @@ app.get('/secret', verifyJWT,
 );
 // REST for posts or user
 app.use('/products', postRouter);
+app.use('/products1', courseRouter);
 app.use('/api/user', verifyJWT, userRouter);
 app.get('/', (req, res) => { res.status(401).send({ error: 'Invalid Endport' }); });
 app.get('*', (req, res) => {
